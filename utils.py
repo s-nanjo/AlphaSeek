@@ -91,6 +91,13 @@ def UCB(l_n1, u_n1, C, alpha, beta):
         term2 = (u_n1 - l_n1)**2
         return (l_n1 + u_n1) / 2 + np.sqrt(beta * (alpha * term1 / 6 + term2 / 12))
 
+def sigma(l_n1, u_n1, C, alpha):
+    if u_n1 == np.inf:
+        return np.inf
+    else:
+        term1 = (u_n1 - l_n1)**2 + 3 * C * (u_n1 - l_n1) + 2 * C**2
+        term2 = (u_n1 - l_n1)**2
+        return np.sqrt(beta * (alpha * term1 / 6 + term2 / 12))    
 
 def get_randomized_weighted_quantile(alpha, weights, scores):
     weights_normalized = weights / np.sum(weights)
