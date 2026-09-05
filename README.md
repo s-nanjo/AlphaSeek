@@ -4,6 +4,7 @@ Reference implementation of "AlphaSeek: model-agnostic sequential experimental d
 
 ## Structure
 - data/ — datasets used in the paper
+- model/ — pretrained models used for polymer design
 - examples/ — experiment scripts and configs
 - utils.py — core utilities for the proposed method
 
